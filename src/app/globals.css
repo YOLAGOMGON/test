@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.auth {
+  min-height: 100vh;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 64px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #52525b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #d4d4d8;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: #ffffff;
+  color: #18181b;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  background: #18181b;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: #27272a;
+}
+
+.button.secondary {
+  background: #ffffff;
+  color: #18181b;
+  border: 1px solid #e4e4e7;
+}
+
+.button.secondary:hover {
+  background: #f4f4f5;
+}
+
+.auth-link {
+  text-align: center;
+  font-size: 14px;
+  color: #52525b;
+}
+
+.auth-link a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #0f0f11;
+    border-color: #27272a;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .label {
+    color: #a1a1aa;
+  }
+
+  .input {
+    background: #101012;
+    border-color: #303036;
+    color: #f4f4f5;
+  }
+
+  .button {
+    background: #f4f4f5;
+    color: #09090b;
+  }
+
+  .button:hover {
+    background: #e4e4e7;
+  }
+
+  .button.secondary {
+    background: #0f0f11;
+    color: #f4f4f5;
+    border-color: #27272a;
+  }
+
+  .button.secondary:hover {
+    background: #1f1f22;
+  }
+
+  .auth-link {
+    color: #a1a1aa;
+  }
+
+  .auth-link a {
+    color: #a5b4fc;
+  }
+}
+
+.dashboard {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 16px 80px;
+}
+
+.helper {
+  font-size: 13px;
+  color: #71717a;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e4e4e7;
+  background: #fafafa;
+}
+
+.row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: #e4e4e7;
+  color: #3f3f46;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .row-info {
+    flex: 1;
+  }
+}
